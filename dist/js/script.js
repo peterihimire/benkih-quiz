@@ -57,7 +57,7 @@ console.log(Math.floor(Math.random() * 3) + 1);
 class Questions {
   async getQuestions() {
     try{
-      let response = await fetch('https://opentdb.com/api.php?amount=15&category=18&difficulty=easy&type=multiple');
+      let response = await fetch('https://opentdb.com/api.php?amount=20&category=18&difficulty=easy&type=multiple');
       console.log(response)
       let data = await response.json();
       let loadedQuestions = data.results;
