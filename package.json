@@ -1,0 +1,20 @@
+{
+  "name": "benkih-quiz",
+  "version": "1.0.0",
+  "description": "quiz app",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "quiz",
+    "computer",
+    "science"
+  ],
+  "author": "Peter Ihimire",
+  "license": "ISC",
+  "homepage": "https://peterihimire.github.io/benkih-quiz",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
