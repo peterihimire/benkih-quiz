@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QUIZES PAGE</title>
+
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/solid.css">
+    <link rel="stylesheet" href="css/regular.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/glider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="/css/quizes.css"> -->
+    <link rel="stylesheet" href="css/jsquiz.css">
+
+</head>
+<body>
+      <!-- Navbar Section -->
+        
+    <nav class="navbar_header">
+        <div class="container">
+            <div class="wrapper">
+                
+                <a href="#" class="navbar_logo">BEN<span>KIH</span></a>
+
+                <div class="navbar_btn">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                
+                <ul class="navbar_links">
+                    <!-- single link -->
+                    <li>
+                        <a href="index.html" class="navbar_single-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="quizes.html" class="navbar_single-link">Quizes</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar_single-link">Login</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>   
+    </nav>
+
+
+
+
+    <!-- Header Section -->
+    <header class="jsquiz-header">
+
+        <div class="header_overlay"></div> 
+        <div class="header_content">
+            <h3>computer quiz</h3>
+        </div>
+        
+    </header>
+
+    <!-- End of Header Section -->
+
+    <!-- Quiz Questions  -->
+    <section>
+        <div class="container">
+            <div class="question_wrapper">
+                <div id="quiz">
+
+                    <div id="hud">
+                        <div id="hud_item">
+                            <p id="progressText" class="hud_prefix">
+                                Question
+                            </p>
+                            <div id="progressBar">
+                                <div id="progressBarFull">
+    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="hud_item">
+                            <p class="hud_prefix">
+                                Time
+                            </p>
+                            <h1 class="hud_main_text">
+                                5:00
+                            </h1>
+                        </div> 
+                    </div>
+                    <div class="main-question">
+                        <h2 id="question">What is the answer to the Question?</h2>
+
+                        <div class="choice_container">
+                            <p class="choice_prefix">A.</p>
+                            <p class="choice_text" data-number="1">Choice 1</p>
+                        </div>
+                        <div class="choice_container">
+                            <p class="choice_prefix">B.</p>
+                            <p class="choice_text" data-number="2">Choice 2</p>
+                        </div>
+                        <div class="choice_container">
+                            <p class="choice_prefix">C.</p>
+                            <p class="choice_text" data-number="3">Choice 3</p>
+                        </div>
+                        <div class="choice_container">
+                            <p class="choice_prefix">D.</p>
+                            <p class="choice_text" data-number="4">Choice 4</p>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <!-- <div class="btn-div"> -->
+                      <button 
+                        type="submit"
+                        id="next-btn" 
+                        class="btn"  
+                        disabled
+                      ><i class="fas fa-arrow-alt-circle-right"></i> next</button>
+                    <!-- </div> -->
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- End Of Quiz Questions  -->
+
+
+
+
+  <!-- footer -->
+  <footer>
+       <!-- last footer -->
+      <div>
+          <div class="container">
+              <div class="last_footer">
+                  <p>Copyright &copy; 2019 | benkih </p>
+              </div>
+          </div>
+      </div>
+       <!-- end of last footer -->
+      
+  </footer>
+  <!-- end of footer -->
+
+
+    <script src="js/glider.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

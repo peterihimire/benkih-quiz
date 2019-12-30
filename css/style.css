@@ -1,0 +1,434 @@
+:root{
+    font-size: 62.5%;
+    --primaryColor: #e8491d;
+    --secondaryColor: #35424a;
+    --mainWhite: #fff;
+    --mainBlack: #444;
+    --mainGrey: #f4f4f4;
+    --mainSpacing: 0.1;
+    --lineHeight: 1.3;
+    --mainTransition: all 0.5s linear;
+    --largeFont: 8rem;
+    --mediumFont: 5rem;
+    --smallFont: 5rem;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--mainWhite);
+  overflow-x: hidden;
+  line-height: var(--lineHeight);
+  color: var(--mainBlack);
+  font-size: 1.6rem;
+}
+
+.container{
+    margin: auto;
+    padding: 0 2rem ;
+    max-width: 117.0rem;
+}
+
+
+
+
+/* ---------- Navbar ---------- */
+.navbar_header{
+    /* background: #225470; */
+    background: var(--secondaryColor);
+    /* background-color: rgba(255, 255, 255, 0); */
+    padding-top: 1rem ;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    /* border-bottom: 0.15rem solid #fff; */
+}
+
+.navbar_logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+.navbar_btn{
+    /* border:  0.2rem solid #fff; */
+    align-self: center;
+    cursor: pointer;
+    border-radius: .5rem;
+    padding: .2rem .4rem .2rem .4rem;
+    position: absolute;
+    top: .5rem;
+    right: 2rem;
+}
+
+
+.bar1,
+.bar2,
+.bar3{
+  width: 3rem;
+  height: .4rem;
+  margin: 0.5rem .5rem;
+  transition: all 2s ease;
+  background: #fff;
+  transition: all 0.5s ease;
+  border-radius: 50px;
+}
+
+.change .bar1{
+  transform: rotate(-45deg) translate(-1px, 10px)
+}
+.change .bar2{
+  opacity: 0;
+}
+.change .bar3{
+  transform: rotate(45deg) translate(-2px, -10px)
+}
+
+
+
+.navbar_links{
+    list-style-type: none;
+    transition: all 0.5s ease;
+
+    /* Hiding the nav */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
+.navbar_collapse{
+    height: 13rem;
+}
+
+.navbar_single-link{
+    display: block;
+    background: none;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    color:#fff;
+    font-weight: bolder;
+}
+
+.navbar_single-link:hover{
+    /* padding-left: 1.5rem; */
+    color: var(--primaryColor);
+}
+
+/* ---------- End of Navbar ---------- */
+
+
+
+/* ---------- Header Section ---------- */
+
+header{
+    background: url('../images/design-development-electronics-326424.jpg')center/cover no-repeat;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 3rem;
+}
+
+
+
+.header_overlay {
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--secondaryColor);
+    z-index: 1;
+    opacity: 0.2;
+}
+
+.header_content{
+   z-index: 1; 
+   color: var(--primaryColor);
+   font-size: var(--smallFont);
+   text-transform: uppercase;
+
+}
+.header_content span {
+  color: var(--mainWhite);
+  font-weight: bolder;
+}
+/* ---------- End of Header ---------- */
+
+
+
+
+
+
+
+/* ---------- Start Quiz Home ---------- */
+.home-btn {
+  /* border: .1rem solid var(--primaryColor); */
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-align: center;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  font-weight: bolder;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: 0 2px 4px 0 rgba(0.1, 0.1, 0.1, 0.5);
+  
+  /* max-width: 30rem; */
+}
+
+.home-btn:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
+  transform: translateY(-0.5rem);
+  transition: transform 105ms;
+}
+
+.home-btns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-center {
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 8rem 0;
+  margin: 0 auto;
+  max-width: 30rem; 
+
+}
+
+.start-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start; 
+  align-content: flex-start;
+  text-align: left;
+}
+
+.start-info li {
+  list-style: none;
+}
+
+/* ---------- End of Start Quiz Home ---------- */
+
+
+
+
+
+
+
+/* ---------- Specialty ---------- */
+
+
+.specialty_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 2rem;
+    padding: 8rem 0;
+    /* margin: 3rem 0; */
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 2rem;
+    margin: 5rem auto;
+    max-width: 70rem; 
+    /* max-height: 70rem; */
+    /* background: var(--mainGrey); */
+    box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
+    border-radius: .5rem;
+}
+
+.specialty {
+    background: var(--mainGrey);
+    /* opacity: 0.3; */
+    padding: 4rem ;
+    /* margin: 4rem 0; */
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.specialty a {
+  text-decoration: none;
+  color: var(--secondaryColor);
+}
+
+.specialty h4 {
+    margin: .6rem 0;
+    text-transform: uppercase;
+}
+
+
+.inner_box {
+    /* padding: .1rem; */
+    background: var(--secondaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner_box i {
+    color: var(--mainWhite);
+    padding: 3rem;
+    font-size: 4rem;
+}
+/* ---------- End of Specialty ---------- */
+
+
+
+
+/* ---------- Footer ---------- */
+footer{
+  display: flex;
+  flex-direction: column;
+  background: var(--mainGrey);
+  color: var(--secondaryColor);
+}
+
+.last_footer {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+/* ---------- End of Footer ---------- */
+
+
+/* ---------- JS Quiz Starter Page ---------- */
+
+.question_wrapper{
+  display:flex;
+  justify-content: center;
+  padding: 2rem;  
+  flex-direction: column;
+}
+
+.quiz_header{
+  background: var(--primaryColor);
+  color: #fff;
+  height: 30vh;
+  width: 100%;
+}
+
+.quiz_header h2{
+  font-size: 10rem;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+/* ---------- End of JS Quiz Starter Page ---------- */
+
+
+
+
+
+
+#hud{
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+}
+
+
+
+
+
+
+@media screen and (min-width: 768px){
+   
+    .navbar_header{
+        width: 100%;
+        /* background: #225470; */
+        background: var(--secondaryColor);
+        padding: 2rem 0;
+    }
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+    }
+
+    .navbar_links{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        z-index: 5;
+        margin-top: 0;
+        /* Unhiding the nav */
+        height: 0;
+        overflow: visible;
+    }
+
+    .navbar_btn{
+        display: none;
+    }
+
+    .navbar_collapse{
+        height: 3rem;
+    }
+
+    .navbar_single-link{
+        padding: 0;
+        margin-top: 0.3rem;
+        margin-left: 1rem;
+    }
+    
+
+    
+    .navbar_logo{
+        font-size: 2.5rem;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .core-features{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-gap: 2rem;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

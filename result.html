@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QUIZES PAGE</title>
+
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/solid.css">
+    <link rel="stylesheet" href="css/regular.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/glider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/quizes.css"> -->
+    <link rel="stylesheet" href="css/jsquiz.css">
+
+</head>
+<body>
+      <!-- Navbar Section -->
+        
+    <nav class="navbar_header">
+        <div class="container">
+            <div class="wrapper">
+                
+                <a href="#" class="navbar_logo">BEN<span>KIH</span></a>
+
+                <div class="navbar_btn">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                
+                <ul class="navbar_links">
+                    <!-- single link -->
+                    <li>
+                        <a href="index.html" class="navbar_single-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="quizes.html" class="navbar_single-link">Quizes</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar_single-link">Login</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>   
+    </nav>
+
+
+
+
+    <!-- Header Section -->
+   
+    <header class="jsquiz-header">
+
+      <div class="header_overlay"></div> 
+      <div class="header_content">
+          <h3>Results</h3>
+      </div>
+      
+    </header>
+     <!-- End of Header Section -->
+
+     <!-- Quiz Questions  -->
+     <section>
+      <div class="container">
+        <div class="question_wrapper">
+            <div class="result-page">
+                <h3 id="finalScore"></h3>
+                <form >
+                  <input 
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Username"
+                
+                  />
+                  <button
+                  type="submit"
+                  id="saveScoreBtn"
+                  class="result-btn"
+                  disabled
+                  > 
+                    <i class="fas fa-sd-card"></i> Save
+                  </button>
+                  <a href="highScore.html" class="result-btn"> <i class="fas fa-list-alt"></i> High Scores</a>
+                  <a href="jsquiz.html" class="result-btn"> <i class="fas fa-redo-alt"></i> Play Again</a>
+                </form> 
+            </div>
+        </div>  
+      </div>
+  </section>
+
+  <!-- End Of Quiz Questions  -->
+
+
+
+  <!-- footer -->
+  <footer>
+   
+     <!-- last footer -->
+    <div>
+        <div class="container">
+            <div class="last_footer">
+                <p>Copyright &copy; 2019 | benkih </p>
+            </div>
+        </div>
+    </div>
+     <!-- end of last footer -->
+    
+</footer>
+<!-- end of footer -->
+
+
+    <script src="js/glider.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/result.js"></script>
+</body>
+</html>

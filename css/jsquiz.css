@@ -1,0 +1,358 @@
+
+/* ---------- Quizes Header ---------- */
+
+.jsquiz-header{
+  background: url('../images/pexels-photo-1181298.jpeg.jpg')center/cover no-repeat;
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 3rem;
+}
+
+
+.jsquiz-header .header_overlay {
+  height: 30vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--secondaryColor);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.jsquiz-header .header_content{
+ z-index: 1; 
+ color: var(--primaryColor);
+ font-size: var(--smallFont);
+ text-transform: uppercase;
+
+}
+.quizes-header .header_content span {
+color: var(--mainWhite);
+font-weight: bolder;
+}
+/* ---------- End of Quizes Header ---------- */
+
+
+
+/* ---------- Question wrapper ---------- */
+.question_wrapper{
+  display:flex;
+  justify-content: center;
+  padding: 2rem;
+  margin: 5rem auto;
+  max-width: 70rem; 
+  /* max-height: 70rem; */
+  /* background: var(--mainGrey); */
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
+  border-radius: .5rem;
+}
+
+.question_wrapper > * {
+  width: 100%;
+}
+
+.main-question h2 {
+  font-size: 2.5rem;
+}
+
+#hud{
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.hud_prefix{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.hud_main_text{
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 4rem;
+  color: var(--primaryColor);
+}
+
+
+#progressBar{
+  width: 20rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+  border-radius: .5rem;
+  background: #ff00002d;
+}
+
+#progressBarFull{
+  height: 3.5rem;
+  background: var(--primaryColor);
+  width: 0;
+  border-radius: .5rem;
+}
+
+#quiz hr{
+  margin: 3rem 0;
+  display: none;
+}
+
+/* ---------- End of Question Wrapper ---------- */
+
+
+/* ---------- Result Page ---------- */
+.result-page{
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12rem 0 8rem 0;
+  margin: 0 auto;
+  max-width: 30rem; 
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  /* max-width: 30rem; */
+  justify-content: center;
+}
+
+form input{
+  /* max-width: 30rem; */
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: .5rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.result-page button{
+  border: none;
+}
+
+.result-page button[disabled]:hover{
+  cursor: not-allowed;
+  /* box-shadow: none; */
+  transform: none;
+}
+
+.result-page h3{
+  color: var(--primaryColor);
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.result-btn{
+  /* border: .1rem solid var(--primaryColor); */
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-align: center;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  font-weight: bolder;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: 0 2px 4px 0 rgba(0.1, 0.1, 0.1, 0.5);
+}
+
+.result-btn:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
+  transform: translateY(-0.5rem);
+  transition: transform 105ms;
+}
+
+
+
+/* ---------- End of Result Page  ---------- */
+
+
+/* ---------- Choice Container Setting ---------- */
+.choice_container{
+  display: flex;
+  margin: 1.5rem 0;
+  background: var(--mainGrey);
+  border-radius: .5rem;
+  width: 100%;
+  /* box-shadow: 0 4px 8px 0 rgba(201, 198, 198, 0.5); */
+}
+
+.choice_container:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(255, 208, 208, 0.5);
+  /* transform: translateY(-0.5rem);
+  transition: transform .2ms; */
+}
+
+.fa-check {
+  color: rgb(114, 187, 5);
+}
+
+.fa-times {
+  color: red;
+}
+
+.choice_prefix {
+  /* background: var(--primaryColor); */
+  padding: 2rem 3rem;
+  color: var(--primaryColor);
+  font-size: 2rem;
+  font-weight: bolder;
+  border-radius: .5rem 0 0 .5rem;
+}
+
+.choice_text{
+  padding:2rem;
+  width: 100%;
+  font-weight: bold;
+}
+
+.answer-indicator {
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.correct{
+  background-color: #00ff3c44;
+}
+
+.incorrect{
+  background-color: #fc05054d;
+}
+
+.btn-div{
+  display: flex;
+  /* align-items: center; */
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* border: .1rem solid var(--primaryColor); */
+  padding: 1.5rem 0;
+  margin: 2rem 0 5rem 0;
+  text-decoration: none;
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+  cursor: pointer;
+  border-radius: .5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  box-shadow: 0 2px 4px 0 rgba(0.1, 0.1, 0.1, 0.5);
+}
+
+
+.btn:hover{
+
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
+  transform: translateY(-0.5rem);
+  transition: transform 105ms;
+
+}
+
+
+#quiz button {
+  border: none;
+}
+#quiz button[disabled]:hover {
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-start {
+  /* border: none; */
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+/* ---------- End of Choice Container Settings ---------- */
+
+
+/* ---------- highScore Settings ---------- */
+.high-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  background: var(--secondaryColor);
+}
+
+.high-page {
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12rem 0 8rem 0;
+  margin: 0 auto;
+  max-width: 30rem; 
+}
+
+.high-page h3 {
+  text-transform: uppercase;
+  color: var(--primaryColor);
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.highList {
+  list-style: none;
+  font-size: 2rem;
+  padding: .2rem;
+  display: flex;
+  align-content: flex-start;
+  font-weight: bolder;
+  color: var(--mainWhite);
+
+}
+
+.highList:hover{
+  color: var(--primaryColor);
+
+}
+
+/* ---------- End of highScore Settings ---------- */
+
+
+
+
+
+
+
+/* 
+@media screen and (min-width: 768px){
+  #progressBar{
+    width: 25rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
