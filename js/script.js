@@ -304,7 +304,7 @@ class UI {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
       localStorage.setItem('mostRecentScore2', `${score}`)
       localStorage.setItem('mostRecentScore', `correct: ${score} of ${MAX_QUESTIONS}`)
-      return window.location.assign('/result.html')
+      return window.location.assign('result.html')
     }
 
     if(availableQuestions.length === 1 || questionCounter === MAX_QUESTIONS - 1){
@@ -338,7 +338,7 @@ class UI {
     if(duration === 0){
       localStorage.setItem('mostRecentScore2', `${score}`)
       localStorage.setItem('mostRecentScore', `correct: ${score} of ${MAX_QUESTIONS}`)
-      return window.location.assign('/result.html')
+      return window.location.assign('result.html')
     }
   }
 
