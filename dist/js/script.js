@@ -6,10 +6,12 @@ const quizDOM = document.querySelector('.main-question');
 const question = document.querySelector('#question');
 const choices = document.querySelectorAll('.choice_text');
 const nextBtn = document.querySelector('#next-btn');
-const progressBarFull = document.querySelector('#progressBarFull');
+const timeBarFull = document.querySelector('.timeBarFull');
 const progressText = document.querySelector('#progressText');
 const time = document.querySelector('.hud_main_text');
 const scoreText = document.querySelector('#score');
+const category = document.querySelector('#category');
+const difficulty = document.querySelector('#difficulty');
 
 
 
@@ -24,23 +26,49 @@ let acceptAnswer = false;
 let duration = 300;
 let t = 0;
 
-const CORRECT_BONUS = 1;
-const MAX_QUESTIONS = 20;
 
 
 
 // navbar event listener
 navbarBtn.addEventListener('click' , () => {
-    let value = navbarLinks.classList.contains('navbar_collapse');
+  let value = navbarLinks.classList.contains('navbar_collapse');
 
-    if(value){
-        navbarLinks.classList.remove('navbar_collapse');
-        navbarBtn.classList.remove('change');
-    }else{
-        navbarLinks.classList.add('navbar_collapse');
-        navbarBtn.classList.add('change');
-    }
+  if(value){
+      navbarLinks.classList.remove('navbar_collapse');
+      navbarBtn.classList.remove('change');
+  }else{
+      navbarLinks.classList.add('navbar_collapse');
+      navbarBtn.classList.add('change');
+  }
 })
+
+
+
+let counter = document.querySelector('#counter').getContext('2d');
+let no = 0;
+let pointToFill = 4.72;
+let counterWidth = counter.canvas.width;
+let counterHeight = counter.canvas.height;
+let diff;
+
+
+
+let counter2 = document.querySelector('#counter2').getContext('2d');
+let num = 0;
+let pToFill = 4.72;
+let cw = counter.canvas.width;
+let ch = counter.canvas.height;
+let difference;
+
+
+
+
+
+const CORRECT_BONUS = 1;
+const MAX_QUESTIONS = 20;
+
+
+
 
 
 
@@ -57,7 +85,8 @@ console.log(Math.floor(Math.random() * 3) + 1);
 class Questions {
   async getQuestions() {
     try{
-      let response = await fetch('https://opentdb.com/api.php?amount=20&category=18&difficulty=easy&type=multiple');
+      // let response = await fetch('https://opentdb.com/api.php?amount=20&category=18&difficulty=easy&type=multiple');
+      let response = await fetch('questio.json')
       console.log(response)
       let data = await response.json();
       let loadedQuestions = data.results;
@@ -66,7 +95,9 @@ class Questions {
         // console.log(quest)
 
         const formattedQuestion = {
-          question : quest.question
+          question : quest.question,
+          category : quest.category,
+          difficulty : quest.difficulty
         }
 
         formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
@@ -83,34 +114,6 @@ class Questions {
         return formattedQuestion;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // const { question, correct_answer, incorrect_answers} = quest;
-        // console.log(question, correct_answer, incorrect_answers[0], incorrect_answers[1], incorrect_answers[2])
-        // return {
-        //   question: question,
-        //   choice1:correct_answer, 
-        //   choice2:incorrect_answers[0],
-        //   choice3:incorrect_answers[1],
-        //   choice4:incorrect_answers[2],
-        //   answer: 1,
-        // }
       })
       console.log(loadedQuestions)
       return loadedQuestions;
@@ -126,26 +129,64 @@ class UI {
     console.log(loadedQuestions)
     questionCounter = 0;
     availableQuestions = [...loadedQuestions]
-    this.displayQuestions()
+    // this.displayQuestions()
+    this.displayQuestions2()
     console.log(availableQuestions)
 
   }
 
-  displayQuestions = () => {
+  // displayQuestions = () => {
+  //   this.acceptingAnswer()
+  //   this.removingColor()
+  //   this.questionCounterCheck()
+  //   this.timeCounterCheck()
+    
+   
+  //   questionCounter++;
+
+ 
+
+  //   // Takes care of the Question Numbering
+  //   progressText.textContent = `Question ${questionCounter } of ${MAX_QUESTIONS}`;
+  //   // This is for the progress bar output
+  //   progressBarFull.style.width = `${questionCounter / MAX_QUESTIONS * 100}%`
+
+  //   questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  //   currentQuestion = availableQuestions[questionIndex];
+
+  //   question.textContent = currentQuestion.question;
+  //   choices.forEach((choice) => {
+  //     const number = choice.dataset['number'];
+  //     choice.textContent = currentQuestion['choice' + number];
+  //   })
+
+  //   availableQuestions.splice(questionIndex, 1)
+  //   acceptAnswer = true;
+   
+  //   console.log(availableQuestions)
+  // }
+
+  displayQuestions2 = () => {
+
     this.acceptingAnswer()
     this.removingColor()
     this.questionCounterCheck()
     this.timeCounterCheck()
+    
    
     questionCounter++;
 
-    // Takes care of the Question Numbering
-    progressText.textContent = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
-    // This is for the progress bar output
-    progressBarFull.style.width = `${questionCounter / MAX_QUESTIONS * 100}%`
+    this.fillCounter()
+    this.fillCounter2()
 
     questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
+    
+    category.textContent = currentQuestion.category;
+    difficulty.textContent = currentQuestion.difficulty;
+
+
+    console.log(availableQuestions.difficulty);
 
     question.textContent = currentQuestion.question;
     choices.forEach((choice) => {
@@ -157,15 +198,16 @@ class UI {
     acceptAnswer = true;
    
     console.log(availableQuestions)
-  }
 
+  }
 
   
   getNextQuestion = () => {
     nextBtn.addEventListener('click', () => {
       setTimeout(()=>{
         this.removingColor()
-        this.displayQuestions()
+        // this.displayQuestions()
+        this.displayQuestions2()
         this.disableNextBtn()
       },500)
     })
@@ -193,12 +235,7 @@ class UI {
         const ans = currentQuestion.answer ;
         const anser = choice.dataset['number'];
 
-        // if(!selectedAnswer){
-        //   nextBtn.disabled = true;
-        // } else {
-        //   nextBtn.disabled = false;
-        // }
-
+     
         nextBtn.disabled = !selectedChoice;
 
         // const newPtagCheck = document.createElement('p');
@@ -253,12 +290,12 @@ class UI {
         const selectedChoice = event.target;
         const selectedAnswer = selectedChoice.dataset['number'];
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-        // console.log(selectedChoice);
+
         
         
         //For the code below, whenever a next button is clicked, it removes the classToApply class from the choice after 0.5 seconds delay.
 
-        // nextBtn.disabled = !selectedChoice;
+    
 
         if(nextBtn.addEventListener('click', (e)=> {
           e.preventDefault()
@@ -303,7 +340,7 @@ class UI {
   questionCounterCheck = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
       localStorage.setItem('mostRecentScore2', `${score}`)
-      localStorage.setItem('mostRecentScore', `correct: ${score} of ${MAX_QUESTIONS}`)
+      localStorage.setItem('mostRecentScore', ` ${score} of ${MAX_QUESTIONS}`)
       return window.location.assign('result.html')
     }
 
@@ -326,10 +363,19 @@ class UI {
     time.textContent = fullTime;
     console.log(fullTime);
 
+     
+
+    console.log(duration, t)
+
     duration = duration - 1;
     t = setTimeout(()=> {
       this.timeCount()
     }, 1000)
+
+     // This is for the progress bar output
+     timeBarFull.style.width = `${((duration/100)*100/3)}%`;
+
+   
     console.log(duration, t)
   }
 
@@ -337,7 +383,7 @@ class UI {
   timeCounterCheck = () => {
     if(duration === 0){
       localStorage.setItem('mostRecentScore2', `${score}`)
-      localStorage.setItem('mostRecentScore', `correct: ${score} of ${MAX_QUESTIONS}`)
+      localStorage.setItem('mostRecentScore', ` ${score} of ${MAX_QUESTIONS}`)
       return window.location.assign('result.html')
     }
   }
@@ -346,8 +392,47 @@ class UI {
 
 
 
+  fillCounter = () => {
+
+    // // Takes care of the Question Numbering
+    // progressText.textContent = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    // // This is for the progress bar output
+    // progressBarFull.style.width = `${questionCounter / MAX_QUESTIONS * 100}%`
 
 
+    diff = ((questionCounter/MAX_QUESTIONS) * Math.PI*2*10)
+  
+    counter.clearRect(0, 0, counterWidth, counterHeight );
+    counter.lineWidth = 40;
+    counter.fillStyle = '#000';
+    counter.strokeStyle = '#e8491d';
+    counter.textAlign = 'center';
+    counter.font = '25px monospace';
+    counter.fillText(`${questionCounter}/${MAX_QUESTIONS}`, 100, 110);
+  
+    counter.beginPath();
+    counter.arc(100, 100, 80, pointToFill, diff/10+pointToFill);
+    counter.stroke();
+    
+  }  
+
+  fillCounter2 = () => {
+
+    difference = ((questionCounter/MAX_QUESTIONS) * Math.PI*2*10)
+  
+    counter2.clearRect(0, 0, cw, ch );
+    counter2.lineWidth = 20;
+    counter2.fillStyle = '#000';
+    counter2.strokeStyle = '#e8491d';
+    counter2.textAlign = 'center';
+    counter2.font = '15px monospace';
+    counter2.fillText(`${questionCounter}/${MAX_QUESTIONS}`, 50, 60);
+  
+    counter2.beginPath();
+    counter2.arc(50, 50, 40, pToFill, difference/10+pToFill);
+    counter2.stroke();
+    
+  }  
 
 }
 
@@ -377,6 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.startQuiz(loadedQuestions)
       ui.getNextQuestion()
       ui.timeCount()
+  
       Storage.saveQuestions(loadedQuestions);
     })
    

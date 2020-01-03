@@ -57,7 +57,7 @@
 
         <div class="header_overlay"></div> 
         <div class="header_content">
-            <h3>computer quiz</h3>
+            <h3>quiz</h3>
         </div>
         
     </header>
@@ -67,30 +67,75 @@
     <!-- Quiz Questions  -->
     <section>
         <div class="container">
-            <div class="question_wrapper">
-                <div id="quiz">
+          <div class="question_wrapper">
+              <div id="quiz">
 
                     <div id="hud">
+
                         <div id="hud_item">
-                            <p id="progressText" class="hud_prefix">
-                                Question
+                            
+                            <p id="quiz-info">
+                                Quiz Info 
+                            <p>
+                            <p  class="hud_prefix">
+                                Category: <span  id="category"></span>
                             </p>
-                            <div id="progressBar">
+                            <p  class="hud_prefix">
+                                Difficulty: <span id="difficulty" ></span>
+                            </p>
+                        </div> 
+
+                        <div id="hud_item">
+                            <!-- <p id="progressText" class="hud_prefix">
+                                Question
+                            </p> -->
+                            <!-- <div id="progressBar">
                                 <div id="progressBarFull">
     
                                 </div>
+                            </div> -->
+
+                            <div id="progressCircle">
+                                  <canvas height="200" width="200" id="counter"></canvas>
                             </div>
+                            <div id="progressCircle2">
+                                <canvas height="100" width="100" id="counter2"></canvas>
+                          </div>
                         </div>
                         
-                        <div id="hud_item">
-                            <p class="hud_prefix">
+                        <!-- <div id="hud_item"> -->
+                            <!-- <p class="hud_prefix">
                                 Time
-                            </p>
-                            <h1 class="hud_main_text">
+                            </p> -->
+                            <!-- <h1 class="hud_main_text">
                                 5:00
-                            </h1>
-                        </div> 
+                            </h1> -->
+                        <!-- </div>  -->
                     </div>
+
+                    <!-- <div id="hud">
+
+                      <div >
+                          <div id="shadowring"></div>
+                          <div id="circle1" ></div>
+                          <div id="circle2" ></div>
+                            <canvas height="200" width="200" id="counter"></canvas>
+                      </div>
+                     
+
+                      <div id="hud_item">
+                          <p class="hud_prefix">
+                              Time
+                          </p>
+                          <h1 class="hud_main_text">
+                              5:00
+                          </h1>
+                      </div> 
+                    </div> -->
+
+                    <hr>
+              
+
                     <div class="main-question">
                         <h2 id="question">What is the answer to the Question?</h2>
 
@@ -110,19 +155,27 @@
                             <p class="choice_prefix">D.</p>
                             <p class="choice_text" data-number="4">Choice 4</p>
                         </div>
-                    </div>
-                    
-                    <hr>
-                    <!-- <div class="btn-div"> -->
-                      <button 
+
+                        <button 
                         type="submit"
                         id="next-btn" 
                         class="btn"  
                         disabled
                       ><i class="fas fa-arrow-alt-circle-right"></i> next</button>
-                    <!-- </div> -->
+
+                    </div>
                     
                 </div>
+
+                <hr>
+
+                <div>
+                  <h2 class="hud_main_text" >05:00</h2>
+                    <div class="timeBar">
+                        <div class="timeBarFull"></div>
+                    </div>
+                </div>
+                
             </div>
             
         </div>
