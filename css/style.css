@@ -184,8 +184,8 @@ header{
 /* ---------- Start Quiz Home ---------- */
 .home-btn {
   /* border: .1rem solid var(--primaryColor); */
-  padding: 1rem 2rem;
-  margin-top: 1rem;
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
   text-decoration: none;
   text-align: center;
   background: var(--primaryColor);
@@ -206,36 +206,62 @@ header{
   transition: transform 105ms;
 }
 
+.home-center {
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 ;
+  margin: 0 auto;
+  max-width: 50rem; 
+
+}
+
 .home-btns{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.home-center {
-  display:flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem 0 8rem 0;
-  margin: 0 auto;
-  max-width: 30rem; 
 
-}
 
 .start-info{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items:flex-start; 
+  justify-content: center;
+  align-items:center; 
   align-content: flex-start;
   text-align: left;
+
+}
+
+.start-info-wrapper {
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .start-info li {
   list-style: none;
+  margin: 0 0 1rem 0;
 }
 
+.start-info h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primaryColor);
+  text-transform: uppercase;
+}
+
+.start-info p {
+  margin: 0 0 1rem 0;
+}
+.question_wrapper hr {
+  padding: .1rem;
+  background: var(--secondaryColor);
+  margin: 1rem 0;
+  border: none; 
+}
 /* ---------- End of Start Quiz Home ---------- */
 
 
@@ -351,11 +377,11 @@ footer{
 
 
 
-#hud{
+/* #hud{
   display: flex;
   justify-content: space-between;
   margin: 3rem;
-}
+} */
 
 
 
