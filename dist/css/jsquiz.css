@@ -263,16 +263,17 @@ form input{
 
 .choice_prefix {
   /* background: var(--primaryColor); */
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   color: var(--primaryColor);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   border-radius: .5rem 0 0 .5rem;
 }
 
 .choice_text{
-  padding:1.5rem;
+  padding:1rem;
   width: 100%;
+  font-size: 1.4rem;
   /* font-weight: bold; */
 }
 
@@ -303,7 +304,7 @@ form input{
   justify-content: center;
   width: 100%;
   /* border: .1rem solid var(--primaryColor); */
-  padding: 2rem 0;
+  padding: 1.3rem 0;
   margin: 1rem 0 ;
   text-decoration: none;
   color: var(--mainWhite);
@@ -431,7 +432,7 @@ form input{
     justify-content: center;
     padding: 2rem;
     margin: auto;
-    max-width: 100rem; 
+    max-width: 80rem; 
     box-shadow: 0 4px 8px 0 rgba(0.1, 0.1, 0.1, 0.5);
     border-radius: .5rem;
   }
@@ -516,7 +517,7 @@ form input{
     left: 50%; */
     display: block;
     /* for the below the (first arg) is for left and right while the (second arg) is for the up and down canvans movement */
-    transform: translate(25%,-20%);
+    transform: translate(5%,-20%);
     /* position: absolute; */
     /* background: greenyellow; */
     z-index: 9;
@@ -527,7 +528,7 @@ form input{
     display: none;
     /* top: 50%;
     left: 50%; */
-    transform: translate(-5%,0%);
+    transform: translate(-3%,0%);
     /* position: absolute; */
     /* background: greenyellow; */
     z-index: 9;
