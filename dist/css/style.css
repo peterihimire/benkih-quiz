@@ -371,10 +371,11 @@ footer{
    
     .navbar_header{
         width: 100%;
-        /* background: #225470; */
         background: var(--mainWhite);
-        padding: 2rem 0;
-        border-bottom: solid .2rem var(--primaryColor);
+        padding: 3rem 0 0 0;
+        z-index: 2;
+        position: fixed;
+        border-bottom: solid .15rem var(--primaryColor);
     }
 
     .wrapper{
@@ -414,6 +415,8 @@ footer{
         font-size: 2.5rem;
         color: var(--primaryColor);
         text-decoration: none;
+        font-weight: bold;
+        margin: 0  0 2rem 0;
     }
     
     .core-features{
