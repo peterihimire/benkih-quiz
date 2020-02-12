@@ -20,6 +20,7 @@
 <body>
       <!-- Navbar Section -->
         
+      <div class="navbar-overlay"></div>
     <nav class="navbar_header">
         <div class="container">
             <div class="wrapper">
@@ -41,7 +42,7 @@
                         <a href="quizes.html" class="navbar_single-link">Quizes</a>
                     </li>
                     <li>
-                        <a href="#" class="navbar_single-link">Login</a>
+                        <a href="#" class="navbar_single-link">Refresh</a>
                     </li>
                 </ul>
 
@@ -54,47 +55,52 @@
 
     <!-- Header Section -->
    
-    <header class="jsquiz-header">
+    <!-- <header class="jsquiz-header">
 
       <div class="header_overlay"></div> 
       <div class="header_content">
           <h3>Results</h3>
       </div>
       
-    </header>
+    </header> -->
      <!-- End of Header Section -->
 
      <!-- Quiz Questions  -->
      <section>
       <div class="container">
-        <div class="question_wrapper">
+        <div class="main-wrapper">
+
+            <div class="question_wrapper">
          
-            <div class="result-page">
-                <div id="warning"></div>
-                <div id="success"></div>
-                <h3 id="successReplace" >Correct : <span id="finalScore" class="rezult" ></span> of 20</h3>
-               
-                <form >
-                  <input 
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Username"
-                
-                  />
-                  <button
-                  type="submit"
-                  id="saveScoreBtn"
-                  class="result-btn"
-                  disabled
-                  > 
-                    <i class="fas fa-sd-card"></i> Save
-                  </button>
-                  <a href="highScore.html" class="result-btn"> <i class="fas fa-list-alt"></i> High Scores</a>
-                  <a href="jsquiz.html" class="result-btn"> <i class="fas fa-redo-alt"></i> Play Again</a>
-                </form> 
-            </div>
-        </div>  
+                <div class="result-page">
+                    <div id="warning"></div>
+                    <div id="success"></div>
+                    <h3 id="successReplace" >Correct : <span id="finalScore" class="rezult" ></span> of 20</h3>
+                   
+                    <form >
+                      <input 
+                      type="text"
+                      name="username"
+                      id="username"
+                      placeholder="Username"
+                    
+                      />
+                      <button
+                      type="submit"
+                      id="saveScoreBtn"
+                      class="result-btn"
+                      disabled
+                      > 
+                        <i class="fas fa-sd-card"></i> Save
+                      </button>
+                      <a href="highScore.html" class="result-btn"> <i class="fas fa-list-alt"></i> High Scores</a>
+                      <a href="jsquiz.html" class="result-btn"> <i class="fas fa-redo-alt"></i> Play Again</a>
+                    </form> 
+                </div>
+            </div>  
+
+        </div>
+        
       </div>
   </section>
 
