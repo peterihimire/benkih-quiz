@@ -253,8 +253,8 @@ form input{
   transition: transform .2ms; */
 }
 
-.fa-check {
-  color: rgb(114, 187, 5);
+.fa-check-circle {
+  color: var(--primaryColor);
 }
 
 .fa-times {
