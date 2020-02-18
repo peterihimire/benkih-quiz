@@ -2,6 +2,7 @@
 // variables
 const navbarBtn = document.querySelector('.navbar_btn');
 const navbarLinks = document.querySelector('.navbar_links');
+const navbarOverlay = document.querySelector('.navbar-overlay');
 const quizDOM = document.querySelector('.main-question');
 const question = document.querySelector('#question');
 const choices = document.querySelectorAll('.choice_text');
@@ -36,9 +37,22 @@ navbarBtn.addEventListener('click' , () => {
   if(value){
       navbarLinks.classList.remove('navbar_collapse');
       navbarBtn.classList.remove('change');
+      navbarOverlay.classList.remove('transparent-background');
   }else{
       navbarLinks.classList.add('navbar_collapse');
       navbarBtn.classList.add('change');
+      navbarOverlay.classList.add('transparent-background');
+  }
+})
+
+navbarOverlay.addEventListener('click', (e)=> {
+  console.log(e.target)
+  console.log('navbar overlay has been clicked');
+  let value = navbarLinks.classList.contains('navbar_collapse');
+  if (value){
+    navbarLinks.classList.remove('navbar_collapse');
+    navbarBtn.classList.remove('change');
+    navbarOverlay.classList.remove('transparent-background');
   }
 })
 
@@ -403,15 +417,22 @@ class UI {
     diff = ((questionCounter/MAX_QUESTIONS) * Math.PI*2*10)
   
     counter.clearRect(0, 0, counterWidth, counterHeight );
-    counter.lineWidth = 40;
+    // below is how thick the arc will be
+    counter.lineWidth = 60;
     counter.fillStyle = '#000';
     counter.strokeStyle = '#e8491d';
     counter.textAlign = 'center';
-    counter.font = '25px monospace';
+    counter.font = '18px monospace';
+
+    //1st digit below is for left and right
+    //2nd digit below is for up and down , smaller means go up and vice-versa
     counter.fillText(`${questionCounter}/${MAX_QUESTIONS}`, 100, 110);
   
     counter.beginPath();
-    counter.arc(100, 100, 80, pointToFill, diff/10+pointToFill);
+    //
+    // 2nd is for up and down direction, smaller the more it goes up , bigger the more it comes down
+    //3rd digit below is for the arc radius, the inner circle how big or small it is, smaller digit the more it gets smaller and vise-versa
+    counter.arc(100, 100, 60, pointToFill, diff/10+pointToFill);
     counter.stroke();
     
   }  
@@ -421,15 +442,15 @@ class UI {
     difference = ((questionCounter/MAX_QUESTIONS) * Math.PI*2*10)
   
     counter2.clearRect(0, 0, cw, ch );
-    counter2.lineWidth = 20;
+    counter2.lineWidth = 30;
     counter2.fillStyle = '#000';
     counter2.strokeStyle = '#e8491d';
     counter2.textAlign = 'center';
-    counter2.font = '15px monospace';
-    counter2.fillText(`${questionCounter}/${MAX_QUESTIONS}`, 50, 60);
+    counter2.font = '11px monospace';
+    counter2.fillText(`${questionCounter}/${MAX_QUESTIONS}`, 50, 55);
   
     counter2.beginPath();
-    counter2.arc(50, 50, 40, pToFill, difference/10+pToFill);
+    counter2.arc(50, 50, 33, pToFill, difference/10+pToFill);
     counter2.stroke();
     
   }  
