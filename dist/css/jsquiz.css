@@ -263,7 +263,7 @@ form input{
 
 .choice_prefix {
   /* background: var(--primaryColor); */
-  padding: 1rem 2rem;
+  padding: 1.3rem 2rem;
   color: var(--primaryColor);
   font-size: 1.5rem;
   font-weight: bolder;
@@ -271,7 +271,7 @@ form input{
 }
 
 .choice_text{
-  padding:1rem;
+  padding:1.3rem;
   width: 100%;
   font-size: 1.4rem;
   /* font-weight: bold; */
@@ -304,7 +304,7 @@ form input{
   justify-content: center;
   width: 100%;
   /* border: .1rem solid var(--primaryColor); */
-  padding: 1.3rem 0;
+  padding: 1.6rem 0;
   margin: 1rem 0 ;
   text-decoration: none;
   color: var(--mainWhite);
@@ -454,6 +454,15 @@ form input{
   text-transform: uppercase;
   color: var(--primaryColor);
 
+}
+
+.choice_prefix {
+  /* background: var(--primaryColor); */
+  padding: 1.5rem 2rem;
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border-radius: .5rem 0 0 .5rem;
 }
 
   .choice_text{
